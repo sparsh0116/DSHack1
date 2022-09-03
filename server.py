@@ -56,18 +56,22 @@ def uiy():
     return render_template("page.html", bookname=bookname2)
 
 
+
+    # =======================
+
+
 @app.route('/bookname', methods=['GET','POST'])
 def book():
     global bookname2
     form = BookName()
     if form.is_submitted():
-    #    result= request.form
+       result= request.form
        bookname2 =request.form['bookname']
-    #    isbn2 =request.form['isbn']
+       isbn2 =request.form['isbn']
        available2 =request.form['available']
-    #    rented2 =request.form['rented']
-    #    sold2 =request.form['sold']
-    #    category2 = request.form['category']
+       rented2 =request.form['rented']
+       sold2 =request.form['sold']
+       category2 = request.form['category']
        
        print(available2)
        
@@ -78,7 +82,7 @@ def book():
         json.dump(book_name_json_data , m)
        
        return redirect("/")
-    return render_template("bookentry.html", form=form)
+    return render_template("userentry.html", form=form)
 
 
 
@@ -155,3 +159,8 @@ def logout():
  
 if __name__ == '__main__':
     app.run()
+
+
+
+
+
