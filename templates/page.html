@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="rt">This is what we need to print</p>
+</body>
+<script>
+    bookName = {{ bookname | tojson }}
+
+function data_read() {
+    var xhr = new XMLHttpRequest()
+    xhr.open('GET', '/static/json/book_name.json', true)
+
+    xhr.onload = function () {
+        jsondata = JSON.parse(this.responseText)
+
+        document.getElementById('rt').innerHTML = jsondata[bookName]["Available"]
+        
+        console.log(jsondata)
+    }
+    xhr.send()
+}
+
+data_read()
+
+
+</script>
+</html>

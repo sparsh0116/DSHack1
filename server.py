@@ -51,29 +51,34 @@ def admin():
     return render_template("adminpanel.html", form=form)
 
 
+@app.route("/rin" , methods=["GET", "POST"])
+def uiy():
+    return render_template("page.html", bookname=bookname2)
+
 
 @app.route('/bookname', methods=['GET','POST'])
-def bookname():
-    book = BookName()
-    if book.is_submitted():
-       result= request.book
-       bookname2 =request.book['bookname']
-       isbn2 =request.book['isbn']
-       available2 =request.book['available']
-       rented2 =request.book['rented']
-       sold2 =request.book['sold']
-       category2 = request.book['category']
-    
+def book():
+    global bookname2
+    form = BookName()
+    if form.is_submitted():
+    #    result= request.form
+       bookname2 =request.form['bookname']
+    #    isbn2 =request.form['isbn']
+       available2 =request.form['available']
+    #    rented2 =request.form['rented']
+    #    sold2 =request.form['sold']
+    #    category2 = request.form['category']
        
-       print(bookname2)
+       print(available2)
+       
        with open('./static/json/book_name.json', 'r') as k:
         book_name_json_data = json.load(k)
-       book_name_json_data[bookname2] = { "ISBN Number" : isbn2}
+       book_name_json_data[bookname2] = { "Available":available2 }
        with open('./static/json/book_name.json', 'w') as m:
         json.dump(book_name_json_data , m)
        
        return redirect("/")
-    return render_template("bookentry.html", form=book)
+    return render_template("bookentry.html", form=form)
 
 
 
