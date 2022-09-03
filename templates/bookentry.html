@@ -76,9 +76,12 @@ input[type=submit]:hover {
     <div class="row">
       <div class="col-25">
         <label for="book_name">Book name:</label>
+        
       </div>
       <div class="col-75">
         <input type="text" id="book_name" name="book_name">
+        {{form.bookname.label}}
+        {{form.bookname}}
       </div>
     </div>
     <div class="row">
@@ -87,6 +90,8 @@ input[type=submit]:hover {
       </div>
       <div class="col-75">
        <input type="number" id="isbn_no" name="isbn_no">
+       {{form.isbn.label}}
+       {{form.isbn}}
       </div>
     </div>
      <div class="row">
@@ -95,6 +100,8 @@ input[type=submit]:hover {
       </div>
       <div class="col-75">
        <input type="number" id="book_count" name="book_count">
+       {{form.available.lable}}
+       {{form.available}}
       </div>
     </div>
     <div class="row">
@@ -103,6 +110,8 @@ input[type=submit]:hover {
       </div>
       <div class="col-75">
        <input type="number" id="books_rented" name="books_rented">
+       {{form.rented.lable}}
+       {{form.rented}}
       </div>
     </div>
     <div class="row">
@@ -111,35 +120,33 @@ input[type=submit]:hover {
       </div>
       <div class="col-75">
        <input type="number" id="book_sold" name="book_sold">
+       {{form.sold.lable}}
+       {{form.sold}}
       </div>
     </div>
     <div class="row">
       <div class="col-25">
-        <label for="category">Category</label>
+        <label for="category">Category:</label>
       </div>
       <div class="col-75">
         <input type="text" id="categoory" name="category">
+        {{form.category.lable}}
+        {{form.category}}
       </div>
     </div>
     <div class="row">
       <div class="col-25">
-        <label for="book_img">Book Image</label>
+        <label for="book_img">Book Image:</label>
       </div>
       <div class="col-75">
         <input type="file" id="img" name="img" accept="image/*">
       </div>
     </div>
-    <div class="row">
-        <div class="col-25">
-          <label for="city_name">City name:</label>
-        </div>
-        <div class="col-75">
-          <input type="text" id="city_name" name="city_name">
-        </div>
-      </div>
-    <div class="row">
-      <input type="submit" value="Submit">
-    </div>
+
+    <p class="container my-4 col-1" onclick="sound()" role="button"
+    style="font-size: medium;  margin: 24px 195px; padding: 0px 0px">
+    <button id="next" class="btn btn-success">Next</button>
+</p>
   </form>
 </div>
 

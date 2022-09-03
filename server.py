@@ -51,6 +51,32 @@ def admin():
     return render_template("adminpanel.html", form=form)
 
 
+
+@app.route('/bookname', methods=['GET','POST'])
+def bookname():
+    book = BookName()
+    if book.is_submitted():
+       result= request.book
+       bookname2 =request.book['bookname']
+       isbn2 =request.book['isbn']
+       available2 =request.book['available']
+       rented2 =request.book['rented']
+       sold2 =request.book['sold']
+       category2 = request.book['category']
+    
+       
+       print(bookname2)
+       with open('./static/json/book_name.json', 'r') as k:
+        book_name_json_data = json.load(k)
+       book_name_json_data[bookname2] = { "ISBN Number" : isbn2}
+       with open('./static/json/book_name.json', 'w') as m:
+        json.dump(book_name_json_data , m)
+       
+       return redirect("/")
+    return render_template("bookentry.html", form=book)
+
+
+
 GOOGLE_CLIENT_ID = "899477051975-7s9rub7s022pt1s33s0o0k80rgmul78g.apps.googleusercontent.com"
 client_secrets_file = os.path.join(pathlib.Path(__file__).parent, "client_secret.json")
 
