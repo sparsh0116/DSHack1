@@ -179,16 +179,30 @@
                             {{form.name(size=40,style='height: 30px')}}
                         </div>
                         <div class="container my-4 col-8 fs-5" style='display:flex; flex-direction:column;'>
+                            {{form.shopname.label}}
+                            {{form.shopname(size=40,style='height: 30px')}}
+                        </div>
+                    
+                    
+                        <div class="container my-4 col-8 fs-5" style='display:flex; flex-direction:column;'>
                             {{form.mobile.label}}
                             {{form.mobile(size=40,style='height: 30px')}}
                         </div>
                         <div class="container my-4 col-8 fs-5" style='display:flex; flex-direction:column;'>
-                            {{form.age.label}}
-                            {{form.age(size=40,style='height: 30px')}}
+                            {{form.email.label}}
+                            {{form.email(size=40,style='height: 30px')}}
                         </div>
                         <div class="container my-4 col-8 fs-5" style='display:flex; flex-direction:column;'>
-                            {{form.destination.label}}
-                            {{form.destination(size=40,style='height: 30px', type='name')}}
+                            {{form.addressline1.label}}
+                            {{form.addressline1(size=40,style='height: 30px', type='name')}}
+                        </div>
+                        <div class="container my-4 col-8 fs-5" style='display:flex; flex-direction:column;'>
+                            {{form.city.label}}
+                            {{form.city(size=40,style='height: 30px', type='name')}}
+                        </div>
+                        <div class="container my-4 col-8 fs-5" style='display:flex; flex-direction:column;'>
+                            {{form.pincode.label}}
+                            {{form.pincode(size=40,style='height: 30px')}}
                         </div>
 
                         <p class="container my-4 col-1" onclick="sound()" role="button"

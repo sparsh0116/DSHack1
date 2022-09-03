@@ -33,10 +33,12 @@ def admin():
     if form.is_submitted():
        result= request.form
        name2 =request.form['name']
-       age2 =request.form['age']
+       shopname2 =request.form['shopname']
+       email2 =request.form['email']
        mobile2 =request.form['mobile']
-       destination2 =request.form['destination']
-       
+       addressline12 =request.form['addressline1']
+       city2 = request.form['city']
+       pincode2 =request.form['pincode']
        
        print(name2)
        with open('./static/json/vendor_id.json', 'r') as u:
