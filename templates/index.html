@@ -14,20 +14,29 @@
 
     <!-- Navbar -->
 
-    <header class="p-3 fixed-top text-bg-dark">
-        <div class="container">
-            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                <a class="navbar-brand" href="#" style="color: #F5E8C7; font-size: 2rem; font-weight: bold;">
-                    Oasis
-                </a>
+    <nav class="navbar navbar-expand-lg " style="background-color: #0B132B;">
 
-                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                    <li><a href="#" class="nav-link px-2 text-secondary" style="margin-left: 2rem;">Home</a></li>
-                    <li><a href="#" class="nav-link px-2 text-white">About</a></li>
-                    <li><a href="#" class="nav-link px-2 text-white">Contact Us</a></li>
+        <div class="container">
+            <a class="navbar-brand" href="#" style="color: #CFD2CF; font-size: 2rem; font-weight: bold;">Oasis</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/" style="color: #CFD2CF;">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/about.html" style="color: #CFD2CF;">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contactus.html" style="color: #CFD2CF;">Contact Us</a>
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false" style="color: #F5E8C7;">
+                            aria-expanded="false" style="color: #CFD2CF;">
                             Shop
                         </a>
                         <ul class="dropdown-menu">
@@ -36,25 +45,25 @@
                             <li><a class="dropdown-item" href="#">Rent</a></li>
                             <li><a class="dropdown-item" href="#">Cart</a></li>
                             <li><a class="dropdown-item" href="#">Orders</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item disabled" href="#">Sign Out</a></li>
+
+
                         </ul>
                     </li>
                 </ul>
-
-                <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-                    <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..."
-                        aria-label="Search">
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline btn-primary" type="submit">Search</button>
                 </form>
-
-                <div class="text-end">
-                    <a href="/login" id="join"></a>   
+                <div class="text-end mx-2">
+                    <a href="/login" id="join"></a>
                 </div>
+                <a href="/admin"><button type="button" class="btn btn-primary ">Admin?</button></a>
+                
+
             </div>
         </div>
-    </header>
+    </nav>
+
 
 
     <!-- carousel -->
@@ -87,31 +96,183 @@
     <!-- products -->
 
 
-    <div class="row my-3 mx-3">
-        <div class="col-2">
-          <div id="list-example" class="list-group">
-            <a class="list-group-item list-group-item-action" href="#list-item-1">Bestsellers</a>
-            <a class="list-group-item list-group-item-action" href="#list-item-2">English books</a>
-            <a class="list-group-item list-group-item-action" href="#list-item-3">Hindi books</a>
-            <a class="list-group-item list-group-item-action" href="#list-item-4">Tamil books</a>
-            <a class="list-group-item list-group-item-action" href="#list-item-4">Telugu books</a>
-          </div>
+    <div class="row my-5 mx-3">
+        <div class="col-3">
+            <div id="list-example" class="list-group">
+                <a class="list-group-item list-group-item-action" href="#list-item-1">Bestsellers</a>
+                <a class="list-group-item list-group-item-action" href="#list-item-2">English books</a>
+                <a class="list-group-item list-group-item-action" href="#list-item-3">Hindi books</a>
+                <a class="list-group-item list-group-item-action" href="#list-item-4">Tamil books</a>
+                <a class="list-group-item list-group-item-action" href="#list-item-4">Telugu books</a>
+            </div>
         </div>
-        <div class="col-8">
-          <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
-            <h2 id="list-item-1">Bestsellers</h2>
-            <p>...</p>
-            <h2 id="list-item-2">English</h2>
-            <p>...</p>
-            <h2 id="list-item-3">Hindi</h2>
-            <p>...</p>
-            <h2 id="list-item-4">Tamil</h2>
-            <p>...</p>
-            <h2 id="list-item-4">Telugu</h2>
-            <p>...</p>
-          </div>
+        <div class="col-8 mx-4">
+            <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true"
+                class="scrollspy-example" tabindex="0">
+                <h2 id="list-item-1" style="color: #CFD2CF;">Bestsellers</h2>
+                <div  style="display:flex; flex-wrap:wrap; ">
+                    <div class="card" style="width: 18rem; ">
+                        
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                    <div class="card " style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                    <div class="card " style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                    <div class="card " style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <h2 id="list-item-2" style="color: #CFD2CF;" class="my-3">English</h2>
+                <div  style="display:flex; flex-wrap:wrap; ">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                    <div class="card " style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                    <div class="card " style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <h2 id="list-item-3" style="color: #CFD2CF;" class="my-3">Hindi</h2>
+                <div  style="display:flex; flex-wrap:wrap; ">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                    <div class="card " style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                    <div class="card " style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <h2 id="list-item-4" style="color: #CFD2CF;" class="my-3">Tamil</h2>
+                <div  style="display:flex; flex-wrap:wrap; ">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                    <div class="card " style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                    <div class="card " style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+                <h2 id="list-item-4" style="color: #CFD2CF;" class="my-3">Telugu</h2>
+                <div  style="display:flex; flex-wrap:wrap; ">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                    <div class="card " style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                    <div class="card " style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+    </div>
+
+
+    <!-- footer  -->
+
+
+
+    <div class="container">
+        <footer class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="/" class="nav-link px-2 " style="color: #CFD2CF;">Home</a></li>
+                <li class="nav-item"><a href="/Contact.html" class="nav-link px-2 " style="color: #CFD2CF;">Contact
+                        Us</a></li>
+                <li class="nav-item"><a href="/about.html" class="nav-link px-2 " style="color: #CFD2CF;">About</a></li>
+            </ul>
+            <p class="text-center " style="color: #CFD2CF;">© 2022 Company, Inc</p>
+        </footer>
+    </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
@@ -122,42 +283,42 @@
 <script>
     const navbar_join = document.getElementById('join')
 
-        current_user = {{ current_user_id | tojson}}
-        console.log(typeof current_user)
+    current_user = {{ current_user_id | tojson }}
+    console.log(typeof current_user)
 
-        var id_json
+    var id_json
 
-        function data_read(){
-            var xhr = new XMLHttpRequest()
-            xhr.open('GET', '/static/json/user_id.json', true)
-        
-            xhr.onload = function () {
-                jsondata = JSON.parse(this.responseText)
-        
-                id_json = jsondata
-            }
-            xhr.send()
-            return 0
+    function data_read() {
+        var xhr = new XMLHttpRequest()
+        xhr.open('GET', '/static/json/user_id.json', true)
+
+        xhr.onload = function () {
+            jsondata = JSON.parse(this.responseText)
+
+            id_json = jsondata
         }
+        xhr.send()
+        return 0
+    }
 
-        async function data_load() {
-            const id_data = await data_read()
-            const mytimeout = setTimeout(rundata, 2000)
-        }
+    async function data_load() {
+        const id_data = await data_read()
+        const mytimeout = setTimeout(rundata, 2000)
+    }
 
-        function rundata() {
-            console.log(id_json)
-            navbar_join.innerHTML = `<a  style='font-weight: 1000;font-size: 20px;'> ${id_json[current_user]["user_name"]}
+    function rundata() {
+        console.log(id_json)
+        navbar_join.innerHTML = `<a style='font-weight: 1000;font-size: 20px;color: #5BC0BE;'> ${id_json[current_user]["user_name"]}
                                      <img src="${id_json[current_user]["user_dp"]}" style='border-radius: 50%;height: 32px;width: 32px;margin-left:6px'></a>`
-        }
+    }
 
 
-        if( current_user == "not_defined") {
-            navbar_join.innerHTML = `<button href="/login" class="btn btn-primary ms-lg-3" style="border-radius: 15px 15px 15px 15px ;border:5px">Join Us</button>`
-        }
-        else {
-            data_load()
-        }
+    if (current_user == "not_defined") {
+        navbar_join.innerHTML = `<button href="/login" class="btn btn-primary ms-lg-3" style="border-radius: 15px 15px 15px 15px ;border:5px">Join Us</button>`
+    }
+    else {
+        data_load()
+    }
 
 </script>
 

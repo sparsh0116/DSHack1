@@ -6,6 +6,9 @@ import os
 import pathlib
 import json
 
+
+from forms import *
+
 app = Flask(__name__)
 app.secret_key = "sanskriti"
 CORS(app)
@@ -22,6 +25,66 @@ current_user = "not_defined"
 @app.route('/', methods=['GET', 'POST'])
 def index():
     return render_template("index.html", current_user_id=current_user)
+
+
+@app.route('/admin', methods=['GET','POST'])
+def admin():
+    form = SignUpForm()
+    if form.is_submitted():
+       result= request.form
+       name2 =request.form['name']
+       shopname2 =request.form['shopname']
+       email2 =request.form['email']
+       mobile2 =request.form['mobile']
+       addressline12 =request.form['addressline1']
+       city2 = request.form['city']
+       pincode2 =request.form['pincode']
+       
+       print(name2)
+       with open('./static/json/vendor_id.json', 'r') as u:
+        vendor_id_json_data = json.load(u)
+       vendor_id_json_data[name2] = { "Moble Number" : mobile2}
+       with open('./static/json/vendor_id.json', 'w') as s:
+        json.dump(vendor_id_json_data , s)
+       
+       return redirect("/bookname")
+    return render_template("adminpanel.html", form=form)
+
+
+@app.route("/rin" , methods=["GET", "POST"])
+def uiy():
+    return render_template("page.html", bookname=bookname2)
+
+
+
+    # =======================
+
+
+@app.route('/bookname', methods=['GET','POST'])
+def book():
+    global bookname2
+    form = BookName()
+    if form.is_submitted():
+       result= request.form
+       bookname2 =request.form['bookname']
+       isbn2 =request.form['isbn']
+       available2 =request.form['available']
+       rented2 =request.form['rented']
+       sold2 =request.form['sopriceld']
+       category2 = request.form['category']
+       
+       print(available2)
+       
+       with open('./static/json/book_name.json', 'r') as k:
+        book_name_json_data = json.load(k)
+       book_name_json_data[bookname2] = { "Available":available2 }
+       with open('./static/json/book_name.json', 'w') as m:
+        json.dump(book_name_json_data , m)
+       
+       return redirect("/")
+    return render_template("userentry.html", form=form)
+
+
 
 GOOGLE_CLIENT_ID = "899477051975-7s9rub7s022pt1s33s0o0k80rgmul78g.apps.googleusercontent.com"
 client_secrets_file = os.path.join(pathlib.Path(__file__).parent, "client_secret.json")
@@ -96,3 +159,8 @@ def logout():
  
 if __name__ == '__main__':
     app.run()
+
+
+
+
+
