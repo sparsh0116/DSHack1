@@ -35,6 +35,6 @@ class BookName(FlaskForm):
     isbn = StringField('ISBN No.*', validators=[DataRequired(), Length(max = 13,min = 13)])
     available  = StringField('No. of Books Available*', validators=[DataRequired(), Length(max = 50)])
     rented = StringField('No. of Books Rented*',validators=[DataRequired(), Length(max = 50)])
-    sold = StringField('No. of Books Sold*', validators=[DataRequired(), Length(max = 50)] )
+    price = StringField('Price of the mentioned book*', validators=[DataRequired(), Length(max = 50)] )
     category= StringField('Category*', validators=[DataRequired(), Length(max = 10)] )
     submit = SubmitField('Submit')

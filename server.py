@@ -47,7 +47,7 @@ def admin():
        with open('./static/json/vendor_id.json', 'w') as s:
         json.dump(vendor_id_json_data , s)
        
-       return redirect("/")
+       return redirect("/bookname")
     return render_template("adminpanel.html", form=form)
 
 
@@ -70,7 +70,7 @@ def book():
        isbn2 =request.form['isbn']
        available2 =request.form['available']
        rented2 =request.form['rented']
-       sold2 =request.form['sold']
+       sold2 =request.form['sopriceld']
        category2 = request.form['category']
        
        print(available2)
